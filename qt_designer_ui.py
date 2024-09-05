@@ -1,0 +1,131 @@
+from PyQt5 import QtCore, QtGui, QtWidgets # type: ignore
+
+
+class Ui_MainWindow(object):
+    def setupUi(self, MainWindow):
+        MainWindow.setObjectName("MainWindow")
+        MainWindow.resize(720, 480)
+        self.centralwidget = QtWidgets.QWidget(MainWindow)
+        self.centralwidget.setObjectName("centralwidget")
+
+        self.title_label = QtWidgets.QLabel(self.centralwidget)
+        self.title_label.setGeometry(QtCore.QRect(0, 0, 720, 40))
+        font = QtGui.QFont()
+        font.setFamily("Calibri")
+        font.setPointSize(18)
+        font.setBold(True)
+        font.setWeight(75)
+        self.title_label.setFont(font)
+        self.title_label.setFrameShape(QtWidgets.QFrame.Box)
+        self.title_label.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.title_label.setLineWidth(2)
+        self.title_label.setAlignment(QtCore.Qt.AlignCenter)
+        self.title_label.setObjectName("title_label")
+
+        self.current_image_label = QtWidgets.QLabel(self.centralwidget)
+        self.current_image_label.setGeometry(QtCore.QRect(30, 80, 121, 21))
+        font = QtGui.QFont()
+        font.setFamily("Calibri")
+        font.setPointSize(14)
+        self.current_image_label.setFont(font)
+        self.current_image_label.setObjectName("current_image_label")
+
+        self.image_container = QtWidgets.QLabel(self.centralwidget)
+        self.image_container.setGeometry(QtCore.QRect(30, 120, 226, 226))
+        self.image_container.setFrameShape(QtWidgets.QFrame.Box)
+        self.image_container.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.image_container.setObjectName("image_container")
+
+        self.line = QtWidgets.QFrame(self.centralwidget)
+        self.line.setGeometry(QtCore.QRect(290, 70, 3, 311))
+        self.line.setFrameShape(QtWidgets.QFrame.VLine)
+        self.line.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.line.setObjectName("line")
+
+        self.shuffle_button = QtWidgets.QPushButton(self.centralwidget)
+        self.shuffle_button.setGeometry(QtCore.QRect(180, 360, 75, 23))
+        self.shuffle_button.setObjectName("shuffle_button")
+
+        self.predict_button = QtWidgets.QPushButton(self.centralwidget)
+        self.predict_button.setGeometry(QtCore.QRect(90, 360, 75, 23))
+        self.predict_button.setObjectName("predict_button")
+
+        self.image_directory_label = QtWidgets.QLabel(self.centralwidget)
+        self.image_directory_label.setGeometry(QtCore.QRect(320, 120, 151, 21))
+        font = QtGui.QFont()
+        font.setFamily("Calibri")
+        font.setPointSize(11)
+        self.image_directory_label.setFont(font)
+        self.image_directory_label.setObjectName("image_directory_label")
+
+        self.image_directory_button = QtWidgets.QPushButton(self.centralwidget)
+        self.image_directory_button.setGeometry(QtCore.QRect(520, 120, 31, 23))
+        self.image_directory_button.setText("")
+        self.image_directory_button.setObjectName("image_directory_button")
+
+        icon = QtGui.QIcon("file_dialogue_img-removebg.png")
+        self.image_directory_button.setIcon(icon)
+        self.image_directory_button.setIconSize(QtCore.QSize(24, 24))  
+
+        self.choose_model_label = QtWidgets.QLabel(self.centralwidget)
+        self.choose_model_label.setGeometry(QtCore.QRect(320, 160, 181, 21))
+        font = QtGui.QFont()
+        font.setFamily("Calibri")
+        font.setPointSize(11)
+        self.choose_model_label.setFont(font)
+        self.choose_model_label.setObjectName("choose_model_label")
+
+        self.choose_model_button = QtWidgets.QPushButton(self.centralwidget)
+        self.choose_model_button.setGeometry(QtCore.QRect(520, 160, 31, 23))
+        self.choose_model_button.setText("")
+        self.choose_model_button.setObjectName("choose_model_button")
+        icon = QtGui.QIcon("neural_network-removebg.png")
+        self.choose_model_button.setIcon(icon)
+        self.choose_model_button.setIconSize(QtCore.QSize(18, 18))  
+
+        self.image_classes_label = QtWidgets.QLabel(self.centralwidget)
+        self.image_classes_label.setObjectName(u"image_classes_label")
+        self.image_classes_label.setGeometry(QtCore.QRect(320, 200, 91, 21))
+        self.image_classes_label.setFont(font)
+        
+        self.line_2 = QtWidgets.QFrame(self.centralwidget)
+        self.line_2.setObjectName(u"line_2")
+        self.line_2.setGeometry(QtCore.QRect(320, 150, 174, 3))
+        self.line_2.setFrameShape(QtWidgets.QFrame.HLine)
+        self.line_2.setFrameShadow(QtWidgets.QFrame.Sunken)
+        
+        self.line_3 = QtWidgets.QFrame(self.centralwidget)
+        self.line_3.setObjectName(u"line_3")
+        self.line_3.setGeometry(QtCore.QRect(320, 190, 174, 3))
+        self.line_3.setFrameShape(QtWidgets.QFrame.HLine)
+        self.line_3.setFrameShadow(QtWidgets.QFrame.Sunken)
+        
+        self.image_class_label_container = QtWidgets.QTextEdit(self.centralwidget)
+        self.image_class_label_container.setObjectName(u"image_class_label_container")
+        self.image_class_label_container.setGeometry(QtCore.QRect(320, 230, 231, 31))
+        self.image_class_label_container.setFrameShape(QtWidgets.QFrame.Box)
+
+        MainWindow.setCentralWidget(self.centralwidget)
+        self.menubar = QtWidgets.QMenuBar(MainWindow)
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 720, 21))
+        self.menubar.setObjectName("menubar")
+        MainWindow.setMenuBar(self.menubar)
+        self.statusbar = QtWidgets.QStatusBar(MainWindow)
+        self.statusbar.setObjectName("statusbar")
+        MainWindow.setStatusBar(self.statusbar)
+
+        self.retranslateUi(MainWindow)
+        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
+    def retranslateUi(self, MainWindow):
+        _translate = QtCore.QCoreApplication.translate
+        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        self.title_label.setText(_translate("MainWindow", "IMAGE PREDICTOR"))
+        self.current_image_label.setText(_translate("MainWindow", "Current Image:"))
+        self.image_container.setText(_translate("MainWindow", "TextLabel"))
+        self.shuffle_button.setText(_translate("MainWindow", "Shuffle"))
+        self.predict_button.setText(_translate("MainWindow", "Predict"))
+        self.image_directory_label.setText(_translate("MainWindow", "Select Image Directory:"))
+        self.choose_model_label.setText(_translate("MainWindow", "Choose Classification Model:"))
+        self.image_classes_label.setText(_translate("MainWindow", u"Image Classes:", None))
+        self.image_class_label_container.setText("")
